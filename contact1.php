@@ -1,22 +1,49 @@
 <?php
-// Kết nối đến cơ sở dữ liệu
-$conn = mysqli_connect("localhost", "root", "", "menucap2pro");
+// $name = $_POST['name'];
+// $email = $_POST['email'];
+// $phone = $_POST['phone'];
+// $message = $_POST['message'];
 
-// Kiểm tra kết nối
-if (!$conn) {
-    die("Kết nối không thành công: " . mysqli_connect_error());
-}
+// $conn = new mysqli('localhost','root','','online_learning');
+// if($conn->connect_error){
+//    echo "$conn->connect_error";
+//     die("Connection Failed : ". $conn->connect_error);
+// } else {
+//     $stmt = $conn->prepare("insert into contact1 (name, email, phone, message) values(?, ?, ?, ?)");
+//     $stmt->bind_param("ssss", $name, $email, $phone, $message);
+//     $execval = $stmt->execute();
+//     echo("Gửi thành công!!!!!");
 
+//      $stmt->close();
+//     $conn->close();
+// }
+?>
+<?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
-// Truy vấn danh mục món ăn từ bảng "categories"
-$query = "SELECT * FROM major";
-$result = mysqli_query($conn, $query);
+$conn = new mysqli('localhost', 'root', '', 'online_learning');
+if ($conn->connect_error) {
+    echo "$conn->connect_error";
+    die("Connection Failed: " . $conn->connect_error);
+} else {
+    $stmt = $conn->prepare("INSERT INTO contact1 (name, email, phone, message) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $phone, $message);
+    $execval = $stmt->execute();
 
-// Kiểm tra và xử lý kết quả
-if (!$result) {
-    die("Lỗi truy vấn: " . mysqli_error($conn));
+    if ($execval) {
+        echo "<script>alert('Gửi thành công!');</script>";
+    } else {
+        echo "<script>alert('Lỗi khi gửi!');</script>";
+    }
+
+    $stmt->close();
+    $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,24 +242,21 @@ if (!$result) {
 				<div class="col-md-6">
 					<div class="contact-form box">
 						<h2 class="form-title text-center">Để lại lời nhắn</h2>
-						<form class="" action="contact.php" method="POST">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Tên" name="name">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-									title="Vui lòng nhập định dạng email hợp lệ (ví dụ: example@gmail.com)">
-							</div>
-							<div class="form-group">
-								<input type="tel" class="form-control" placeholder="Số điện thoại" name="phone" required pattern="[0-9]{10,}"
-									title="Vui lòng nhập số điện thoại gồm 10 chữ số">
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" placeholder="Lời nhắn" name="message" required></textarea>
-							</div>
-							<button type="submit" class="btn btn-block btn-theme btn-form">Gửi lời nhắn</button>
-						</form>
-						
+						<form action="contact.php" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Tên" name="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Số điện thoại" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Lời nhắn" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-theme btn-form">Gửi lời nhắn</button>
+                        </form>
                         
 					</div>
 				</div>
@@ -352,3 +376,4 @@ if (!$result) {
 	<script src="js/main.js"></script>
 </body>
 </html>
+

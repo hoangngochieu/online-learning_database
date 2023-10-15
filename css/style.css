@@ -596,6 +596,7 @@ select.form-control:focus option {
 .header .sub-menu-item a:hover,
 .header .menu-item:hover>a {
     color: var(--main-color);
+   
 }
 
 .header .menu-item>a i {
@@ -605,7 +606,7 @@ select.form-control:focus option {
     transition: tranform 0.3s ease;
 }
 
-
+/* 
 .header .sub-menu {
     position: absolute;
     top: 100%;
@@ -620,13 +621,14 @@ select.form-control:focus option {
     visibility: hidden;
     opacity: 0;
     transform: translateY(10px);
-}
+} */
 
 @media (min-width: 992px) {
     .header .menu-item:hover>.sub-menu {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
+        
     }
 }
 
@@ -637,6 +639,7 @@ select.form-control:focus option {
     text-transform: capitalize;
     font-weight: 400;
     transition: color 0.3s ease;
+    
 }
 
 .header-backdrop,

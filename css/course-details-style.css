@@ -359,7 +359,7 @@ select.form-control:focus option{
         margin-left: 40px;
         position: relative;
 }
- /* chỉ con thôi,muốn cả cháu thì bỏ ">" */
+ /* chá»‰ con thÃ´i,muá»‘n cáº£ chÃ¡u thÃ¬ bá» ">" */
 .header .menu-item > a{
     display: block;
     padding: 24px 0;
@@ -388,7 +388,7 @@ select.form-control:focus option{
     position: absolute;
     top: 100%;
     background-color: var(--white);
-    Left: 0;
+    Left: 60px;
     width: 130px;
     padding: 10px 0;
     border-radius: 5px;
@@ -398,6 +398,10 @@ select.form-control:focus option{
     visibility: hidden;
     opacity: 0;
     transform: translateY(10px);
+}
+.sub-menu .sub-menu1{
+    left: 0px;
+
 }
 @media (min-width: 992px){
     .header .menu-item:hover > .sub-menu{

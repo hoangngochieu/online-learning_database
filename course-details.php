@@ -1,79 +1,176 @@
+<?php
+// Kết nối đến cơ sở dữ liệu
+$conn = mysqli_connect("localhost", "root", "", "menucap2pro");
+
+// Kiểm tra kết nối
+if (!$conn) {
+    die("Kết nối không thành công: " . mysqli_connect_error());
+}
+
+
+// Truy vấn danh mục món ăn từ bảng "categories"
+$query = "SELECT * FROM major";
+$result = mysqli_query($conn, $query);
+
+// Kiểm tra và xử lý kết quả
+if (!$result) {
+    die("Lỗi truy vấn: " . mysqli_error($conn));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title> course details</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title> Unicou </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="css/course-details-style.css">
+  <link rel="stylesheet" href="css/course-details-style.css?v=<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="css/duy.css">
+  <link rel="stylesheet" href="css/duy.css?v=<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="css/switcher.css">
+  <link rel="stylesheet" href="css/switcher.css?v=<?php echo time(); ?>">
 
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" class="js-glass-style" href="css/glass.css" disabled>
+  <link rel="stylesheet" href="css/responsive.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" class="js-glass-style" href="css/glass.css?v=<?php echo time(); ?>" disabled>
 
-    <link rel="stylesheet" class="js-color-style" href="css/colors/color-2.css">
+  <link rel="stylesheet" class="js-color-style" href="css/colors/color-2.css?v=<?php echo time(); ?>">
+
+  
+
 
 <body class="t-dark">
-    <!-- page loader start -->
-    <div class="page-loader js-page-loader">
-        <div></div>
-    </div>
-    <!-- page loader end -->
-    <!-- main start -->
+  <!-- page loader start -->
+  <div class="page-loader js-page-loader">
+    <div></div>
+  </div>
+  <!-- page loader end -->
+
+
+  <!-- main start -->
+  <div class="main-wrapper">
+
     <!-- header start -->
     <header class="header">
-        <div class="container d-flex justify-content-between align-items-center">
+      <div class="container d-flex justify-content-between align-items-center">
 
-            <div class="header-logo b">
-                <a href="index.html"><span>Uni</span>Cou</a>
-            </div>
-
-            <button type="button" class="header-hamburger-btn js-header-menu-toggler">
-                <span><i class="fa-solid fa-bars" style="font-size: 28px;color:var(--black-70);"></i></span>
-            </button>
-
-            <div class="header-backdrop js-header-backdrop"></div>
-
-            <nav class="header-menu js-header-menu">
-                <button type="button" class="header-close-btn js-header-menu-toggler">
-                    <i class="fas fa-times"></i>
-                </button>
-                <ul class="menu">
-                    <li class="menu-item"><a href="index.html">Home</a></li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" class="js-toggle-sub-menu">Chuyên ngành <i class="fas fa-chevron-down"></i></a>
-                        <ul class="sub-menu js-sub-menu">
-
-                            <li class="sub-menu-item text-center"><a href="">AD</a></li>
-                            <li class="sub-menu-item text-center"><a href="courses.html">DA</a></li>
-                            <li class="sub-menu-item text-center"><a href="">NS</a></li>
-                            <li class="sub-menu-item text-center"><a href="">BA</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="contact.html">Liên hệ</a></li>
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" class="js-toggle-sub-menu">Tài khoản <i class="fas fa-chevron-down"></i></a>
-                        <ul class="sub-menu js-sub-menu">
-                            <li class="sub-menu-item"><a href="log-in.html">Đăng Nhập</a></li>
-                            <li class="sub-menu-item"><a href="sign-up.html">Đăng kí</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-
+        <div class="header-logo b">
+          <a href="index.php"><span>Uni</span>Cou</a>
         </div>
+
+        <button type="button" class="header-hamburger-btn js-header-menu-toggler">
+          <span><i class="fa-solid fa-bars" style="font-size: 28px;color:var(--black-70);"></i></span>
+        </button>
+
+        <div class="header-backdrop js-header-backdrop"></div>
+
+        <nav class="header-menu js-header-menu">
+          <button type="button" class="header-close-btn js-header-menu-toggler">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu">
+            
+            <li class="menu-item menu-item-has-children">
+            <a href="#" class="js-toggle-sub-menu">Chuyên ngành <i class="fas fa-chevron-down"></i></a>
+              <ul class="sub-menu sub-menu1 js-sub-menu">
+
+
+                                          <?php
+                                                          // Lặp qua danh mục món ăn và hiển thị
+                                              while ($row = mysqli_fetch_assoc($result)) {
+                                                echo'<li class="menu-item menu-item-has-children">';
+                                                echo" <a href='#' class='js-toggle-sub-menu'>{$row['name']} <i class='fas fa-chevron-down'></i></a>";
+                                                echo' <ul class="sub-menu js-sub-menu">';
+                                                // Truy vấn món ăn thuộc danh mục hiện tại
+                                                $majorId = $row['id'];
+                                                $menuQuery = "SELECT * FROM module WHERE major_id = $majorId";
+                                                $menuResult = mysqli_query($conn, $menuQuery);
+
+
+
+                                                // Hiển thị danh sách món ăn
+                                                if ($menuResult) {
+                                                   
+                                                    while ($menuItem = mysqli_fetch_assoc($menuResult)) {
+                                                      echo"    <li class='sub-menu-item text-center'><a href='courses.php'>{$menuItem['name']} </a></li>";
+                                                    }
+                                                    echo '</ul>';
+                                                }
+                                                echo '</li>';
+                                            }
+                                          
+                                       
+            
+                
+               
+                
+    
+       
+                ?>
+                    <!-- <li class="sub-menu-item text-center"><a href="courses.php">1.2</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">1.3</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">1.4</a></li>
+    
+               
+                
+                <li class="menu-item menu-item-has-children">
+                  <a href="#" class="js-toggle-sub-menu">2 <i class="fas fa-chevron-down"></i></a>
+                  <ul class="sub-menu js-sub-menu">
+    
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.1</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.2</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.3</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.4</a></li>
+    
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#" class="js-toggle-sub-menu">2 <i class="fas fa-chevron-down"></i></a>
+                  <ul class="sub-menu js-sub-menu">
+    
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.1</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.2</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.3</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.4</a></li>
+    
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#" class="js-toggle-sub-menu">2 <i class="fas fa-chevron-down"></i></a>
+                  <ul class="sub-menu js-sub-menu">
+    
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.1</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.2</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.3</a></li>
+                    <li class="sub-menu-item text-center"><a href="courses.php">2.4</a></li>
+    
+                  </ul>
+                </li> -->
+
+              </ul>
+            </li>
+           
+          
+
+            <li class="menu-item"><a href="contact.php">Liên hệ</a></li>
+            <li class="menu-item menu-item-has-children">
+              <a href="#" class="js-toggle-sub-menu">Tài khoản <i class="fas fa-chevron-down"></i></a>
+              <ul class="sub-menu js-sub-menu">
+                <li class="sub-menu-item"><a href="log-in.php">Đăng Nhập</a></li>
+                <li class="sub-menu-item"><a href="sign-up.php">Đăng kí</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
 
     </header>
     <!-- header end -->
@@ -83,8 +180,8 @@
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="courses.html">Courses</a></li>
+                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="courses.php">Courses</a></li>
                     <li class="breadcrumb-item den" aria-current="page">Courses Details</li>
                 </ol>
             </nav>

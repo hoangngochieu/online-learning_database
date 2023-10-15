@@ -174,72 +174,45 @@ if (!$result) {
 
     </header>
     <!-- header end -->
+
 	<!--breadcrumn start -->
 	<div class="breadcrumb-nav">
 		<div class="container">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb mb-0">
 					<li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-					<li class="breadcrumb-item" aria-current="page">Liên hệ</li>
+					<li class="breadcrumb-item" aria-current="page">Đăng kí</li>
 				</ol>
 			</nav>
 		</div>
 	</div>
 	<!--breadcrumn end -->
-	<!-- contact section start -->
-	<section class="contact-section section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="section-title">
-						<p class="sub-title">Liên lạc</p>
-					</div>
-					<div class="contact-item">
-						<div class="contact-item">
-							<div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-							<h3>Địa chỉ</h3>
-							<p>470 Trần Đại Nghĩa, quận Ngũ Hành Sơn, thành phố Đà Nẵng</p>
+	<!--sign section start -->
+	<section class="signup section-padding">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-7 col-lg-6 col-xl-5">
+				<div class="signup-form box">
+					<h2 class="form-title text-center">Tạo tài khoản</h2>
+					<form action="">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Họ và Tên">
 						</div>
-						<div class="contact-item">
-							<div class="icon-box"><i class="fas fa-phone"></i></div>
-							<h3>Số điện thoại</h3>
-							<p>0236.3667.117</p>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Email">
 						</div>
-						<div class="contact-item">
-							<div class="icon-box"><i class="fas fa-envelope"></i></div>
-							<h3>Email</h3>
-							<p>De@Vku.Udn.Vn</p>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Mật khẩu">
 						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="contact-form box">
-						<h2 class="form-title text-center">Để lại lời nhắn</h2>
-						<form class="" action="contact.php" method="POST">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Tên" name="name">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-									title="Vui lòng nhập định dạng email hợp lệ (ví dụ: example@gmail.com)">
-							</div>
-							<div class="form-group">
-								<input type="tel" class="form-control" placeholder="Số điện thoại" name="phone" required pattern="[0-9]{10,}"
-									title="Vui lòng nhập số điện thoại gồm 10 chữ số">
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" placeholder="Lời nhắn" name="message" required></textarea>
-							</div>
-							<button type="submit" class="btn btn-block btn-theme btn-form">Gửi lời nhắn</button>
-						</form>
-						
-                        
-					</div>
+						<button type="submit" class="btn btn-block btn-theme btn-form">Đăng kí</button>
+						<p class="text-center mt-4 mb-4">Đã có tài khoản ? <a href="log-in.php">Đăng nhập</a></p>
+					</form>
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
-	<!-- contact section end  -->
+	<!--sign section end -->
 	<!-- footer start -->
 	<footer class="footer">
 		<div class="footer-top">
@@ -310,45 +283,45 @@ if (!$result) {
 
 	<!-- main end -->
 
-	<!--style switcher start -->
-	<div class="style-switcher js-style-switcher">
+
+      <!--style switcher start -->
+	  <div class="style-switcher js-style-switcher">
 		<div class="style-switcher-toggler js-style-switcher-toggler">
-			<i class="fa fa-cog"></i>
+		  <i class="fa fa-cog"></i>
 		</div>
 		<h3>Chuyển đổi phong cách</h3>
 		<div class="style-switcher-item">
-			<p class="mb-2">Màu chủ đề</p>
-		
-			<div class="theme-color js-theme-colors">
-				<button type="button" data-js-theme-color="color-1" class="js-theme-color-item color-1">
-				</button>
-				<button type="button" data-js-theme-color="color-2" class="js-theme-color-item color-2">
-				</button>
-				<button type="button" data-js-theme-color="color-3" class="js-theme-color-item color-3">
-				</button>
-				<button type="button" data-js-theme-color="color-4" class="js-theme-color-item color-4">
-				</button>
-				<button type="button" data-js-theme-color="color-5" class="js-theme-color-item color-5">
-				</button>
-			</div>
+		  <p class="mb-2">Màu chủ đề</p>
+		   theme colors 
+		  <div class="theme-color js-theme-colors">
+			<button type="button" data-js-theme-color="color-1" class="js-theme-color-item color-1">
+			</button>
+			<button type="button" data-js-theme-color="color-2" class="js-theme-color-item color-2">
+			</button>
+			<button type="button" data-js-theme-color="color-3" class="js-theme-color-item color-3">
+			</button>
+			<button type="button" data-js-theme-color="color-4" class="js-theme-color-item color-4">
+			</button>
+			<button type="button" data-js-theme-color="color-5" class="js-theme-color-item color-5">
+			</button>
+		  </div>
 		</div>
 		<div class="style-switcher-item">
-			<div class="form-check form-switch">
-				<input class="form-check-input js-dark-mode" type="checkbox" role="switch" id="dark-mode">
-				<label class="form-check-label" for="dark-mode">Chế độ tối</label>
-			</div>
+		  <div class="form-check form-switch">
+			<input class="form-check-input js-dark-mode" type="checkbox" role="switch" id="dark-mode">
+			<label class="form-check-label" for="dark-mode">Chế độ tối</label>
+		  </div>
 		</div>
 		<div class="style-switcher-item">
-			<div class="form-check form-switch">
-				<input class="form-check-input js-glass-effect" type="checkbox" role="switch" id="glass-effect">
-				<label class="form-check-label" for="glass-effect">Hiệu ứng thủy tinh</label>
-			</div>
-		</div>
-	</div>
-	<!--style switcher end -->
-
-	<script src="js/switcher.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/main.js"></script>
-</body>
-</html>
+		  <div class="form-check form-switch">
+			<input class="form-check-input js-glass-effect" type="checkbox" role="switch" id="glass-effect">
+			<label class="form-check-label" for="glass-effect">Hiệu ứng thủy tinh</label>
+		  </div>
+		</div> 
+	  </div>
+	  <!--style switcher end -->
+		<script src="js/switcher.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+	</html>
