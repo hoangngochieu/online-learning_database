@@ -32,22 +32,6 @@ Vì dự án chủ yếu là Front-end tĩnh, nên không yêu cầu cài đặt
 3. Click đúp chuột vào file `index.html` để mở trang web trực tiếp trên trình duyệt.
 4. **Khuyên dùng:** Nếu bạn có sử dụng Visual Studio Code, hãy cài đặt extension **Live Server**. Sau đó nhấn chuột phải vào file `index.html` -> chọn "Open with Live Server" để trải nghiệm đầy đủ tính năng nhất.
 
-### 📸 Hình ảnh Demo (Screenshots)
-
-Dưới đây là một số hình ảnh demo trực quan về giao diện của trang web:
-
-#### 1. Trang chủ (Home Page)
-![Trang chủ](screenshots/1.%20home%20page.png)
-
-#### 2. Trang danh sách khóa học (Courses Page)
-![Danh sách khóa học](screenshots/2.%20courses%20page.png)
-
-#### 3. Trang Đăng nhập (Login Page)
-![Trang đăng nhập](screenshots/4.%20login%20page.png)
-
-#### 4. Bảng Tùy chỉnh giao diện (Style Switcher)
-![Tùy chỉnh giao diện](screenshots/7.%20style%20switcher.png)
-
 ---
 
 ## English Version
@@ -78,21 +62,27 @@ Since this project is primarily a static front-end application, it does not requ
 3. Double-click the `index.html` file to open the website directly in your browser.
 4. **Recommended:** If you are using Visual Studio Code, install the **Live Server** extension. Then right-click on the `index.html` file -> select "Open with Live Server" for the best experience.
 
-### 📸 Screenshots
+---
 
-Here are some visual demonstrations of the website's interface:
+## 📸 Hình ảnh Demo / Screenshots
 
-#### 1. Home Page
+Dưới đây là một số hình ảnh demo trực quan về giao diện của trang web / Here are some visual demonstrations of the website's interface:
+
+### 1. Trang chủ (Home Page)
 ![Home Page](screenshots/1.%20home%20page.png)
 
-#### 2. Courses Page
+### 2. Trang danh sách khóa học (Courses Page)
 ![Courses Page](screenshots/2.%20courses%20page.png)
 
-#### 3. Login Page
+### 3. Trang Đăng nhập (Login Page)
 ![Login Page](screenshots/4.%20login%20page.png)
 
-#### 4. Style Switcher
-![Style Switcher](screenshots/7.%20style%20switcher.png)
+---
+
+## 🎓 Nguồn tham khảo / Credits
+
+- Giao diện và cấu trúc code gốc được tham khảo từ hướng dẫn của kênh YouTube **[The WebShala](https://www.youtube.com/c/TheWebShala)**.
+- *The original UI design and code structure are inspired by tutorials from the YouTube channel **[The WebShala](https://www.youtube.com/c/TheWebShala)**.*
 
 ---
 *Trường Đại học CNTT và Truyền thông Việt - Hàn (VKU).*
